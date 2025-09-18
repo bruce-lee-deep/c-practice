@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C8F3FCE0-C3C3-4FBC-A0FB-2777D86675D6}|\u7B97\u6CD5\\\u7B97\u6CD5.vcxproj|D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\\u6392\u5E8F\u7B97\u6CD5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C8F3FCE0-C3C3-4FBC-A0FB-2777D86675D6}|\u7B97\u6CD5\\\u7B97\u6CD5.vcxproj|solutionrelative:\u7B97\u6CD5\\\u6392\u5E8F\u7B97\u6CD5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8F3FCE0-C3C3-4FBC-A0FB-2777D86675D6}|\u7B97\u6CD5\\\u7B97\u6CD5.vcxproj|D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\\u67E5\u627E\u7B97\u6CD5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C8F3FCE0-C3C3-4FBC-A0FB-2777D86675D6}|\u7B97\u6CD5\\\u7B97\u6CD5.vcxproj|solutionrelative:\u7B97\u6CD5\\\u67E5\u627E\u7B97\u6CD5.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8F3FCE0-C3C3-4FBC-A0FB-2777D86675D6}|\u7B97\u6CD5\\\u7B97\u6CD5.vcxproj|D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\Sort.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C8F3FCE0-C3C3-4FBC-A0FB-2777D86675D6}|\u7B97\u6CD5\\\u7B97\u6CD5.vcxproj|solutionrelative:\u7B97\u6CD5\\Sort.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Sort.h",
+              "DocumentMoniker": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\Sort.h",
+              "RelativeDocumentMoniker": "\u7B97\u6CD5\\Sort.h",
+              "ToolTip": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\Sort.h",
+              "RelativeToolTip": "\u7B97\u6CD5\\Sort.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-12T07:25:53.668Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u6392\u5E8F\u7B97\u6CD5.cpp",
+              "DocumentMoniker": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\\u6392\u5E8F\u7B97\u6CD5.cpp",
+              "RelativeDocumentMoniker": "\u7B97\u6CD5\\\u6392\u5E8F\u7B97\u6CD5.cpp",
+              "ToolTip": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\\u6392\u5E8F\u7B97\u6CD5.cpp",
+              "RelativeToolTip": "\u7B97\u6CD5\\\u6392\u5E8F\u7B97\u6CD5.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAKgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-12T07:17:22.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\u67E5\u627E\u7B97\u6CD5.cpp",
+              "DocumentMoniker": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\\u67E5\u627E\u7B97\u6CD5.cpp",
+              "RelativeDocumentMoniker": "\u7B97\u6CD5\\\u67E5\u627E\u7B97\u6CD5.cpp",
+              "ToolTip": "D:\\c\u002B\u002B\u7EC3\u4E60\\\u7B97\u6CD5\\\u7B97\u6CD5\\\u67E5\u627E\u7B97\u6CD5.cpp",
+              "RelativeToolTip": "\u7B97\u6CD5\\\u67E5\u627E\u7B97\u6CD5.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-05T13:16:11.579Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

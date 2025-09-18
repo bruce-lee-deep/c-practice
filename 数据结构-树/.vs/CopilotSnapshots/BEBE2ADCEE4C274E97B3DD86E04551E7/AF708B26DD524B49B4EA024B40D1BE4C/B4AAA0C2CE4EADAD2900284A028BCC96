@@ -1,0 +1,100 @@
+﻿#pragma once
+#ifndef BINOMIAL_HEAP_H//如果这个宏没被定义过，就执行下面的程序，如果被定义就直接跳到endif
+#define BINOMIAL_HEAP_H//如果宏没被定义就重新定义
+#include<iostream>
+#include<climits>
+using namespace std;
+//二项数节点结构
+template<typename T>
+struct BinomialNode {
+	T key;                 //节点储存的值
+	int degree;            //节点的度数（子节点的个数，子节点的度数依次为degree-1,degree-2,,,,,,0）
+	BinomialNode* parent;  //定义父节点指针
+	BinomialNode* child;   //子节点指针（最左子节点）
+	BinomialNode* sibling; //兄弟节点指针（右兄弟）
+
+	//构造函数
+	BinomialNode(const T&k):key(k),degree(0),parent(nullptr),child(nullptr), sibling(nullptr){}
+
+};
+
+//二项堆类
+template<typename T>
+class BinomialHeap {
+private:
+	BinomialNode<T>* head;//链表的头指针
+	//将两个相同度数的二项数连接起来，保持最小堆性质
+	BinomialNode<T>* linkTrees(BinomialNode<T>* tree1, BinomialNode<T>* tree2) {
+		if (tree1->key > tree2->key) {
+			swap(tree1, tree2);
+		}
+
+		//合并操作
+		tree2->parent = tree1;
+		tree2->sibing = tree1->child;
+		tree1->child = tree2;
+		tree1->degree++;
+
+		return tree1;
+	}
+	//合并两个二项堆的链表，按度数递增排序
+	BinomialNode<T>* mergeHeaps(BinomialHeap<T>& other) {
+		BinomialNode<T>* newHead = nullptr;//合并后新的二项堆链表
+		BinomailNode<T>** current = &newHead;
+		BinomialNode<T>* h1 = head;
+		BinomialNode<T>* h2 = other.head;
+
+		//合并两个有序链表
+		while (h1 != nullptr && h2 != nullptr) {
+			if (h1->degree <= h2->degree) {
+				*current = h1;
+				h1=h1->sibling;
+			}
+			else {
+				*current = h2;
+				h2 = h2->sibling;
+			}
+			current = &((*current)->sibling);
+		}
+
+		//处理剩余节点
+		if(h1!=nullptr){
+			*current = h1;
+		}
+		else {
+			*current = h2;
+		}
+
+		return newHead;
+	}
+
+	//反转节点的子链表，用于提取最小值后处理子节点
+	BinomialNode<T>* reverseList(BinomialNode<T>* node) {
+		BinomialNode<T>* prev = nullptr;
+		BinomialNode<T>* current = node;
+		BinomialNode<T>* next = nullptr;
+
+		while (current != nullptr) {
+			next = current->sibling;
+			current->sibling = prev;
+			current->parent = nullptr;
+			prev = current;
+			current = next;
+		}
+
+		return prev;
+	}
+
+	//打印二项树的辅助函数
+};
+
+
+
+
+
+
+
+
+
+#endif
+

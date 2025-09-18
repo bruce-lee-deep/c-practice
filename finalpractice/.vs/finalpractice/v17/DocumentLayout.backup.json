@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\c\u002B\u002B\u7EC3\u4E60\\finalpractice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0E4EF542-1BC6-4654-B0D4-5162D8EFA194}|finalpractice\\finalpractice.vcxproj|D:\\c\u002B\u002B\u7EC3\u4E60\\finalpractice\\finalpractice\\\u6E90.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0E4EF542-1BC6-4654-B0D4-5162D8EFA194}|finalpractice\\finalpractice.vcxproj|solutionrelative:finalpractice\\\u6E90.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u6E90.cpp",
+              "DocumentMoniker": "D:\\c\u002B\u002B\u7EC3\u4E60\\finalpractice\\finalpractice\\\u6E90.cpp",
+              "RelativeDocumentMoniker": "finalpractice\\\u6E90.cpp",
+              "ToolTip": "D:\\c\u002B\u002B\u7EC3\u4E60\\finalpractice\\finalpractice\\\u6E90.cpp*",
+              "RelativeToolTip": "finalpractice\\\u6E90.cpp*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-23T05:58:30.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

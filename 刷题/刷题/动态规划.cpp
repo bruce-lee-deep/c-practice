@@ -256,10 +256,70 @@ class Solution_8_1 {
 		return max_len;
 	}
 };
+
+//9.最大正方形
+class Solution_9 {
+public:
+	int maximalSquare(vector<vector<char>>& matrix) {
+		int m = matrix.size();
+		int n = matrix[0].size();
+		vector<vector<int>>dp(m, vector<int>(n,0));//dp[i][j]表示以matrix[i][j]为右下角的最大正方形的边长
+		//给第一行和第一列赋值
+		int res=0;
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if (matrix[i][j] == '1') {
+					if (i == 0 || j == 0) {
+						dp[i][j] = 1;
+					}
+					else {
+						dp[i][j] = min(min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;
+					}
+				}
+				res = max(res, dp[i][j]);
+			}
+		}
+		return res*res;
+	}
+};
+//使用一维vector
+class olution_9_1 {
+public:
+	int maximalSquare(vector<vector<char>>& matrix) {
+		int m = matrix.size();
+		int n = matrix[0].size();
+		vector<int>dp(n, 0);
+		int res = 0, prev = 0;
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				int temp = dp[j];
+				if (matrix[i][j] == '1') {
+					if (i == 0 || j == 0) {
+						dp[j] = 1;
+					}
+					else {
+						dp[j] = min({ dp[j],dp[j - 1],prev }) + 1;
+					}
+					res = max(res, dp[j]);
+				}
+				else {
+					dp[j] = 0;
+				}
+				prev = temp;
+			}
+		}
+		return res * res;
+	}
+};
 int main() {
-	string s = "()(())";
-	Solution_8 sol;
-	int res=sol.longestValidParentheses(s);
+	vector<vector<char>>matrix = {
+		{'1','0','1','0','0'},
+		{'1','0','1','1','1'},
+		{'1','1','1','1','1'},
+		{'1','0','0','1','0'}
+	};
+	Solution_9 sol;
+	int res=sol.maximalSquare(matrix);
 	cout << res;
 	return 0;
 }

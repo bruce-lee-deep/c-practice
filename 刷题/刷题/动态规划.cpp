@@ -174,28 +174,92 @@ public:
 };
 
 //7.乘积最大的子数组
-class Solution {
+class Solution_7{
 public:
 	int maxProduct(vector<int>& nums) {
 		int len=nums.size();
-		int res=nums[0];
-		int maxP = nums[0];
-		int minP = nums[0];
-		for (int i = 1; i < len; i++) {
-			maxP = max(maxP * nums[i], maxP);
-			minP = min(maxP * nums[i], maxP);
+		int res=INT_MIN;
+		int maxP =1;
+		int minP =1;
+		for (int i = 0; i < len; i++) {
+			if (nums[i] < 0) {
+				int temp = maxP;
+				maxP = minP;
+				minP = temp;
+			}
+			maxP = max(maxP * nums[i], nums[i]);
+			minP = min(maxP * nums[i], nums[i]);
 			res = max(res, maxP);
 		}
 		return res;
 	}
 };
 
+//8.最长有效括号
+class Solution_8{
+public:
+	int longestValidParentheses(string s) {
+		int size = s.length();
+		vector<int>dp(size, 0);
+		int maxVal = 0;
+		for (int i = 1; i < size; i++) {
+			if (s[i] == ')') {
+				if (s[i - 1] == '(') {
+					dp[i] = 2;
+					if (i - 2 >= 0) {
+						dp[i] = dp[i] + dp[i - 2];
+					}
+				}
+				else if (dp[i - 1] > 0) {
+					if ((i - dp[i - 1] - 1) >= 0 && s[i - dp[i - 1] - 1] == '(') {
+						dp[i] = dp[i - 1] + 2;
+						if ((i - dp[i - 1] - 2 >= 0)) {
+							dp[i] = dp[i] + dp[i - dp[i - 1] - 2];
+						}
+					}
+				}
+			}
+			maxVal = max(maxVal, dp[i]);
+		}
+		return maxVal;
+	}
+};
+//用栈实现
+#include<stack>
+#include<string>
+class Solution_8_1 {
+	int longestValidParentheses(string s) {
+		stack<int>stk;
+		//初始压入-1作为基准，方便计算长度
+		stk.push(-1);
+		int max_len = 0;
 
+		for (int i = 0; i < s.length(); ++i) {
+			if (s[i] == '(') {
+				//左括号入栈
+				stk.push(i);
+			}
+			else {
+				//右括号，先弹出栈顶元素
+				stk.pop();
 
+				if (stk.empty()) {
+					//栈为空，将当前索引入栈作为新基准
+					stk.push(i);
+				}
+				else {
+					//计算当前有效长度并更新最大值
+					max_len = max(max_len, i - stk.top());
+				}
+			}
+		}
+		return max_len;
+	}
+};
 int main() {
-	vector<int>nums = {10,9,2,5,3,7,101,18};
-	Solution_6 sol;
-	int res=sol.lengthOfLIS(nums);
+	string s = "()(())";
+	Solution_8 sol;
+	int res=sol.longestValidParentheses(s);
 	cout << res;
 	return 0;
 }

@@ -311,15 +311,101 @@ public:
 		return res * res;
 	}
 };
+//10.完全平方数
+/*class Solution_10 {
+public:
+	int numSquares(int n) {
+		int minnum = 0;
+		if (n == 1) {
+			return 1;
+		}
+		if (n == 2) {
+			return 2;
+		}
+		int i=n/2;//用查找n处于哪两个数的平方之间
+		for (int i = n / 2; i >= 1; i--) {
+			if (i * i == n) {
+				minnum=1;
+			}
+			else if(i*i<n){
+				break;
+			}
+		}
+		for (int j = i; j >= 1; j--) {
+			int temp = n;
+			for (int k = j; k >= 1; k--) {
+				if (temp < k * k) {
+					break;
+				}
+				temp -= k * k;
+				minnum++;
+				if (temp >= k * k) {
+					k++;
+				}
+			}
+			if (temp != 0) {//如果减完之后temp！=0，则不能以这个j开始
+				minnum = 0;
+			}
+			else {
+				return minnum;
+			}
+		}
+	}
+};*/
+class Solution_10 {
+public:
+	int numSquares(int n) {
+		vector<int>dp(n + 1);//dp[i]表示和为i的最小的完全平方数的个数
+		dp[0] = 0;
+		//状态转移方程：dp[i]=min(dp[i],dp[i-j*j]+1)，
+		for (int i = 1; i <= n; i++) {
+			dp[i] = INT_MAX;
+			for (int j = 1; j*j<= i; j++) {
+				dp[i] = min(dp[i], dp[i - j * j] + 1);
+			}
+		}
+		return dp[n];
+	}
+};
+//四平方和定理
+class Solution_10_1 {
+public:
+	bool isPerfectSquare(int x) {
+		int y = sqrt(x);
+		return y * y == x;//如果返回1说明x是完全平方数，直接返回1
+	}
+	//判断是否能表示成4^k*(8*m+7)
+	bool checkAnswer(int x) {
+		while (x % 4 == 0) {
+			x /= 4;
+		}
+		return x % 8 == 7;//如果结果为真，直接返回4
+	}
+	//判断返回2和3的情况
+	int numSquares(int n) {
+		//是完全平方数的情况
+		if (isPerfectSquare(n)) {
+			return 1;
+		}
+		//特殊表示的情况
+		if (checkAnswer(n)) {
+			return 4;
+		}
+		//判断是两个完全平方数的和的情况，从两侧开始循环
+		for (int i = 1; i <= sqrt(n); i++) {
+			for (int j = sqrt(n); j >= 1; j--) {
+				if ((n - i * i) == j * j) {
+					return 2;
+				}
+			}
+		}
+		return 3;
+		
+	}
+};
 int main() {
-	vector<vector<char>>matrix = {
-		{'1','0','1','0','0'},
-		{'1','0','1','1','1'},
-		{'1','1','1','1','1'},
-		{'1','0','0','1','0'}
-	};
-	Solution_9 sol;
-	int res=sol.maximalSquare(matrix);
+	Solution_10_1 sol;
+	int res = sol.numSquares(13);
 	cout << res;
 	return 0;
 }
